@@ -7,9 +7,9 @@ let shopList = [
     {
         'cityName': 'Санкт-Петербург',
         'shops': [
-            {'coordinates': [59.932039520598174,30.36075688433275], 'name': 'Восстания 1'},
-            {'coordinates': [60.03376800489142,30.41733655158995], 'name': 'Гражданский 114/1'},
-            {'coordinates': [59.8767590254867,30.44311104232784], 'name': 'Бабушкина 71'}
+            {'coordinates': [59.932039520598174,30.36075688433275], 'name': 'Восстания 1', 'metro': 'Площадь Восстания','colorMetro':'red'},
+            {'coordinates': [60.03376800489142,30.41733655158995], 'name': 'Гражданский 114/1', 'metro': 'Гражданский Проспект','colorMetro':'orange'},
+            {'coordinates': [59.8767590254867,30.44311104232784], 'name': 'Бабушкина 71', 'metro': 'Ломоносовская','colorMetro':'green'}
         ]
     },
     {
@@ -91,7 +91,11 @@ $(document).on('change', $('select#city'), function () {
 
     $('#shops').html('');
     for (let c = 0; c < shopList[cityId].shops.length; c++) {
-        $('#shops').append('<li value="' + c + '">' + shopList[cityId].shops[c].name + '</li>');
+                    
+        $('#shops').append(
+            '<li value="' + c + '"><b>' + shopList[cityId].shops[c].name + '</b></li>' 
+            + '<span class="circle '+shopList[cityId].shops[c].colorMetro+'"></span>'
+            + '<span class="metro">'+shopList[cityId].shops[c].metro+'</span>');
     }
 
 });
