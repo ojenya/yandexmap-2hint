@@ -26,18 +26,46 @@
         
         #cityShop {
             margin: 10px;
+            width: 30%;
+        }
+        
+        .header {
+            display: flex;
+            height: 50px;
+            background-color: red;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 36px;
+        }
+        
+        .content {
+            display: flex;
+        }
+        
+        .all {
+            padding: 0 20%;
         }
     </style>
 </head>
 
 <body>
-    <div id="cityShop">
-        <label for="cities">Город</label>:
-        <select name="cities" id="cities"></select>
-        <ul id="shops"></ul>
+    <header class="header">
+        <span>Мастер ремонт</span>
+    </header>
+    <div class="all">
+        <h1>Ювелирные мастерские</h1>
+        <div class="content">
+            <div id="cityShop">
+                <label for="cities">Город</label>:
+                <select name="cities" id="cities"></select>
+                <ul id="shops"></ul>
+            </div>
+
+            <div id="map" style="width: 100%; height: 300px"></div>
+        </div>
     </div>
 
-    <div id="map" style="width: 100%; height: 300px"></div>
 </body>
 
 </html>
